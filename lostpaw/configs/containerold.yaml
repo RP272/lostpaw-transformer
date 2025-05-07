@@ -2,17 +2,17 @@
 # info_path: "/var/run/data/annotated02/train.data"
 # model_path: "/var/run/data/models/"
 
-info_path: "/content/lostpaw-transformer/test.data"
-model_path: "/content/drive/MyDrive/Dataset28-04-2025/fresh"
+info_path: "/var/run/data/annotated02/test.data"
+model_path: "/var/run/data/models"
 # run_name: "2023_01_08_202350 kfold-2of3"
 # run_name: "frozen_vit_Feb11"
-run_name: "2025_05_03_205333"
+run_name: "frozen_vit_Feb11 kfold-2of3"
 
 similarity_probability: 0.5
 
 # Logging
-use_wandb: False
-use_tqdm: False
+use_wandb: True
+use_tqdm: True
 
 # Model Hyperparameters
 epochs: 350
