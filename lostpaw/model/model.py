@@ -61,7 +61,7 @@ class PetViTContrastiveModel(nn.Module):
 
 
     def load_model(self, path: Path):
-        state = torch.load(path)
+        state = torch.load(path, map_location=torch.device('cpu'))
         self.load_state_dict(state)
 
     def save_model(self, path: Path):
