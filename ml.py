@@ -32,7 +32,7 @@ def save_image_embedding(image_path, dog_images, dog_id):
     embedding = feature_tensor.view(-1)
 
     # Ensure both tensors are on the same device (e.g., CPU)
-    embedding = embedding.to("cuda:0")
+    embedding = embedding.to("cpu")
     dog_images.append( (dog_id, torch.tensor(embedding)) )
     return True
 
@@ -45,7 +45,7 @@ def search_similar_images_test(image_path, dog_id, dog_images, function, top_k=1
         return False
     feature_tensor = model(extracted_pets[0][0])
     embedding = feature_tensor.view(-1)
-    embedding = embedding.to("cuda:0")
+    embedding = embedding.to("cpu")
     ids_with_scores = {}
     for element in dog_images:
         if function == 0:
